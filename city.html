@@ -98,7 +98,7 @@
                           </svg>
                         </a>
                       </div>
-                      <a class="header__action" href="#">
+                      <a class="header__action js-open-overlay" href="#" data-id="search">
                         <svg class="ico ico-mono-search">
                           <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
                         </svg>
@@ -266,7 +266,7 @@
             </div>
           </header>
           <!-- Overlay-->
-          <div class="overlay" data-overlay-id="cities">
+          <div class="overlay" data-overlay-id="cities" data-set-height>
             <div class="overlay__bg"></div>
             <div class="overlay__content">
               <div class="container">
@@ -546,6 +546,25 @@
               </div>
             </div>
           </div>
+          <!-- Overlay-->
+          <div class="overlay" data-overlay-id="search">
+            <div class="overlay__bg"></div>
+            <div class="overlay__content">
+              <div class="container">
+                <div class="overlay__wrapper overlay__wrapper--search">
+                  <form class="overlay__search" action="#">
+                    <input type="search" placeholder="Введите поисковый запрос">
+                    <button class="btn btn-primary btn-primary--b-white btn--sm" type="submit">Поиск</button>
+                  </form>
+                  <div class="overlay__close">
+                    <svg class="ico ico-mono-close">
+                      <use xlink:href="img/sprite-mono.svg#ico-mono-close"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- MOBILE NAVI-->
           <div class="mobile-navi">
             <div class="mobile-navi__wrapper">
@@ -675,65 +694,143 @@
               </div>
             </div>
           </div>
-          <!-- mainEvent-->
-          <div class="mainEvent">
-            <div class="container">
-              <div class="p-label">Главное событие</div>
-              <div class="mainEvent__date">8-10 октября, Москва</div>
-              <div class="mainEvent__title-wrapper">
-                <div class="mainEvent__title">ВСЕРОССИЙСКИЙ
-                  <br>ФЕСТИВАЛЬ
-                  <br>НАУКИ
-                  <svg class="ico ico-mono-mainEventTitleDecor">
-                    <use xlink:href="img/sprite-mono.svg#ico-mono-mainEventTitleDecor"></use>
-                  </svg>
-                </div>
-                <div class="mainEvent__image">
-                  <img src="img/events/mainEvent.png" srcset="img/events/mainEvent@2x.png 2x">
-                </div>
-              </div>
-              <div class="mainEvent__image-mobile">
-                <img src="img/events/mainEvent_mobile.png" srcset="img/events/mainEvent_mobile@2x.png 2x">
-              </div>
-              <div class="mainEvent__bottom">
-                <div class="mainEvent__bottom-left">
-                  <a class="btn btn-primary" href="#">Подробнее</a>
-                </div>
-                <div class="mainEvent__bottom-right">
-                  <div class="mainEvent__locations">
-                    <div class="mainEvent__location">
-                      <svg class="ico ico-mono-location">
-                        <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+          <!-- mainEvents-->
+          <div class="mainEvent swiper-container js-swiper-mainEvent">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide mainEvent__slide">
+                <div class="container">
+                  <div class="p-label">Главное событие</div>
+                  <div class="mainEvent__date">8-10 октября, Москва</div>
+                  <div class="mainEvent__title-wrapper">
+                    <div class="mainEvent__title">ВСЕРОССИЙСКИЙ
+                      <br>ФЕСТИВАЛЬ
+                      <br>НАУКИ
+                      <svg class="ico ico-mono-mainEventTitleDecor">
+                        <use xlink:href="img/sprite-mono.svg#ico-mono-mainEventTitleDecor"></use>
                       </svg>
-                      <p>Фундаментальная библиотека МГУ</p>
                     </div>
-                    <div class="mainEvent__location">
-                      <svg class="ico ico-mono-location">
-                        <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
-                      </svg>
-                      <p>Шуваловский корпус МГУ</p>
-                    </div>
-                    <div class="mainEvent__location">
-                      <svg class="ico ico-mono-location">
-                        <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
-                      </svg>
-                      <p>Экспоцентр</p>
-                    </div>
-                    <div class="mainEvent__location">
-                      <svg class="ico ico-mono-location">
-                        <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
-                      </svg>
-                      <p>Российская Академия Наук</p>
-                    </div>
-                    <div class="mainEvent__location">
-                      <svg class="ico ico-mono-location">
-                        <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
-                      </svg>
-                      <p>Зарядье</p>
+                    <div class="mainEvent__image">
+                      <img src="img/events/mainEvent.png" srcset="img/events/mainEvent@2x.png 2x">
                     </div>
                   </div>
-                  <div class="mainEvent__locations-title">+ 90 площадок по всей Москве</div>
+                  <div class="mainEvent__image-mobile">
+                    <img src="img/events/mainEvent_mobile.png" srcset="img/events/mainEvent_mobile@2x.png 2x">
+                  </div>
+                  <div class="mainEvent__bottom">
+                    <div class="mainEvent__bottom-left">
+                      <a class="btn btn-primary" href="#">Подробнее</a>
+                    </div>
+                    <div class="mainEvent__bottom-right">
+                      <div class="mainEvent__locations">
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Фундаментальная библиотека МГУ</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Шуваловский корпус МГУ</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Экспоцентр</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Российская Академия Наук</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Зарядье</p>
+                        </div>
+                      </div>
+                      <div class="mainEvent__locations-title">+ 90 площадок по всей Москве</div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="swiper-slide mainEvent__slide">
+                <div class="container">
+                  <div class="p-label">Главное событие</div>
+                  <div class="mainEvent__date">8-10 октября, Москва</div>
+                  <div class="mainEvent__title-wrapper">
+                    <div class="mainEvent__title">ВСЕРОССИЙСКИЙ
+                      <br>ФЕСТИВАЛЬ
+                      <br>НАУКИ
+                      <svg class="ico ico-mono-mainEventTitleDecor">
+                        <use xlink:href="img/sprite-mono.svg#ico-mono-mainEventTitleDecor"></use>
+                      </svg>
+                    </div>
+                    <div class="mainEvent__image">
+                      <img src="img/events/mainEvent.png" srcset="img/events/mainEvent@2x.png 2x">
+                    </div>
+                  </div>
+                  <div class="mainEvent__image-mobile">
+                    <img src="img/events/mainEvent_mobile.png" srcset="img/events/mainEvent_mobile@2x.png 2x">
+                  </div>
+                  <div class="mainEvent__bottom">
+                    <div class="mainEvent__bottom-left">
+                      <a class="btn btn-primary" href="#">Подробнее</a>
+                    </div>
+                    <div class="mainEvent__bottom-right">
+                      <div class="mainEvent__locations">
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Фундаментальная библиотека МГУ</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Шуваловский корпус МГУ</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Экспоцентр</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Российская Академия Наук</p>
+                        </div>
+                        <div class="mainEvent__location">
+                          <svg class="ico ico-mono-location">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-location"></use>
+                          </svg>
+                          <p>Зарядье</p>
+                        </div>
+                      </div>
+                      <div class="mainEvent__locations-title">+ 90 площадок по всей Москве</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-navbar">
+              <div class="swiper-prev swiper-mainEvent-prev">
+                <svg class="ico ico-mono-arrow-prev">
+                  <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-prev"></use>
+                </svg>
+              </div>
+              <div class="swiper-pagination swiper-mainEvent-pagination"></div>
+              <div class="swiper-next swiper-mainEvent-next">
+                <svg class="ico ico-mono-arrow-next">
+                  <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-next"></use>
+                </svg>
               </div>
             </div>
           </div>
@@ -854,9 +951,9 @@
           <div class="headliners section-dark">
             <div class="container">
               <h2 class="h2-title c-accent">Хэдлайнеры</h2>
-              <div class="headliners__grid">
-                <div class="row no-margin">
-                  <div class="col col-3">
+              <div class="headliners__grid swiper-container js-swiper-headliners">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
                     <div class="headlinerCard">
                       <div class="headlinerCard__cover">
                         <img src="img/headliners/headliner-1.jpg" srcset="img/headliners/headliner-1@2x.jpg 2x">
@@ -868,7 +965,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col col-3">
+                  <div class="swiper-slide">
                     <div class="headlinerCard">
                       <div class="headlinerCard__cover">
                         <img src="img/headliners/headliner-2.jpg" srcset="img/headliners/headliner-2@2x.jpg 2x">
@@ -881,7 +978,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col col-3">
+                  <div class="swiper-slide">
                     <div class="headlinerCard">
                       <div class="headlinerCard__cover">
                         <img src="img/headliners/headliner-3.jpg" srcset="img/headliners/headliner-3@2x.jpg 2x">
@@ -893,7 +990,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col col-3">
+                  <div class="swiper-slide">
                     <div class="headlinerCard">
                       <div class="headlinerCard__cover">
                         <img src="img/headliners/headliner-4.jpg" srcset="img/headliners/headliner-4@2x.jpg 2x">
@@ -1009,7 +1106,16 @@
             <div class="container">
               <div class="actions__wrapper">
                 <div class="row no-margin">
-                  <div class="col col-3 col-xl-6">
+                  <div class="col col-3 col-xl-6 col-sm-12">
+                    <div class="actions__decor">
+                      <svg width="57" height="77" viewBox="0 0 57 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="38.5" cy="38.5" rx="41.0092" ry="13.438" transform="rotate(-45 38.5 38.5)"
+                         stroke="#E54323" stroke-width="12" />
+                        <ellipse cx="38.4996" cy="38.5" rx="41.0092" ry="13.438" transform="rotate(45 38.4996 38.5)"
+                         stroke="#E54323" stroke-width="12" />
+                      </svg>
+
+                    </div>
                     <a class="actionCard actionCard--blue" href="#">
                       <div class="actionCard__decor">
                         <img src="img/actions/action-1.svg">
@@ -1025,7 +1131,23 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col col-3 col-xl-6">
+                  <div class="col col-3 col-xl-6 col-sm-12">
+                    <div class="actions__decor">
+                      <svg width="63" height="97" viewBox="0 0 63 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_actionsdecor_2)">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M2.84199 56.6392C4.4203 56.6963 6.20783 56.8247 8.02374 57.0723C24.3165 59.3265 35.9187 60.5067 42.4754 59.443C49.3696 58.3305 52.39 54.8951 52.7764 50.2204C53.0886 46.1716 50.6721 42.3948 45.6222 39.4022C41.6745 37.0634 35.8856 34.9492 30.4082 32.4291C25.9843 30.4108 21.6913 28.3109 19.6188 25.0261C17.945 22.3736 18.6249 19.1054 21.8253 14.5165C22.2058 13.9739 22.4749 13.3602 22.6169 12.7113C22.759 12.0623 22.7712 11.391 22.6528 10.7364C22.5344 10.0817 22.2878 9.45674 21.9272 8.89785C21.5667 8.33896 21.0995 7.85726 20.5528 7.48077C19.4396 6.72114 18.076 6.42935 16.7547 6.66801C15.4333 6.90668 14.2596 7.65679 13.4854 8.75734C6.96787 18.0909 7.59946 25.0556 11.0113 30.4387C13.2439 33.9783 17.0083 36.9088 21.4783 39.3468C26.5305 42.1017 32.5023 44.266 37.2553 46.485C38.8021 47.1644 40.2819 47.9895 41.6748 48.949C41.7812 49.0255 41.8831 49.1083 41.9798 49.1968C41.6149 49.3176 41.2413 49.4108 40.8624 49.4758C37.1455 49.8862 33.3934 49.883 29.6743 49.4661C24.1407 49.0371 17.3784 48.1725 9.42104 47.0687C2.53537 46.1252 -1.97689 46.1588 -4.58463 46.7473C-8.54058 47.6294 -10.1826 49.8238 -10.7857 51.8926C-11.3887 53.9614 -11.012 56.822 -8.45576 59.9322C-3.14157 66.3842 15.0833 77.4274 29.463 86.2373C30.6193 86.9353 32.0007 87.1495 33.3092 86.8338C34.6176 86.5181 35.7484 85.6978 36.4576 84.5497C36.8057 83.9855 37.039 83.3572 37.144 82.701C37.2489 82.0449 37.2235 81.3739 37.0691 80.7267C36.9147 80.0796 36.6344 79.4691 36.2445 78.9305C35.8545 78.392 35.3626 77.936 34.797 77.5888C24.8491 71.4957 12.9037 64.3741 5.16145 58.5814C4.36915 57.9763 3.56566 57.3057 2.81241 56.6388"
+                           fill="#1BA4DF" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_actionsdecor_2">
+                            <rect width="62.8273" height="81.4626" fill="white"
+                             transform="translate(62.2266 77.58) rotate(162.239)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+
+                    </div>
                     <a class="actionCard actionCard--dark-blue" href="#">
                       <div class="actionCard__decor">
                         <img src="img/actions/action-2.svg">
@@ -1041,7 +1163,15 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col col-3 col-xl-6">
+                  <div class="col col-3 col-xl-6 col-sm-12">
+                    <div class="actions__decor">
+                      <svg width="49" height="106" viewBox="0 0 49 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                         d="M10.0002 4.99991C182 39.9999 -72.0923 32.3396 33.6085 54.9886C141 77.9998 -73.9997 81.6084 39.0002 101"
+                         stroke="#FAB93B" stroke-width="10" stroke-linecap="round" />
+                      </svg>
+
+                    </div>
                     <a class="actionCard actionCard--red" href="#">
                       <div class="actionCard__decor">
                         <img src="img/actions/action-3.svg">
@@ -1057,7 +1187,15 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col col-3 col-xl-6">
+                  <div class="col col-3 col-xl-6 col-sm-12">
+                    <div class="actions__decor">
+                      <svg width="55" height="66" viewBox="0 0 55 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="-104" y="5" width="154" height="56" rx="28" stroke="#E3442D" stroke-width="10" />
+                        <rect width="66" height="20" rx="10" transform="matrix(1 0 0 -1 -34 43)" stroke="#E3442D"
+                         stroke-width="10" />
+                      </svg>
+
+                    </div>
                     <a class="actionCard actionCard--yellow" href="#">
                       <div class="actionCard__decor">
                         <img src="img/actions/action-4.svg">
@@ -1108,43 +1246,45 @@
               </div>
               <!-- section-->
               <div class="partners__section">
-                <div class="row partners__row partners__row--sub">
-                  <div class="partners__col col-1-5 col-lg-12">
+                <div class="row partners__row">
+                  <div class="partners__col col-2-5 col-lg-12">
                     <h5 class="h5-title c-accent">Генеральные партнёры</h5>
-                  </div>
-                  <div class="partners__col col-1-5 col-lg-12"></div>
-                  <div class="partners__col col-1-5 col-lg-12">
-                    <h5 class="h5-title c-accent">При поддержке</h5>
-                  </div>
-                  <div class="partners__col col-1-5 col-lg-12"></div>
-                  <div class="partners__col col-1-5 col-lg-12">
-                    <h5 class="h5-title c-accent">Стратегический партнёр</h5>
-                  </div>
-                </div>
-                <div class="row partners__row partners__row--sub">
-                  <div class="partners__col col-1-5 col-lg-6">
-                    <div class="partners__card partners__card--bl">
-                      <img src="img/partners/gen-1.png" srcset="img/partners/gen-1@2x.png 2x">
+                    <div class="row partners__row partners__row--sub">
+                      <div class="partners__col col-6 col-lg-6">
+                        <div class="partners__card partners__card--bl">
+                          <img src="img/partners/gen-1.png" srcset="img/partners/gen-1@2x.png 2x">
+                        </div>
+                      </div>
+                      <div class="partners__col col-6 col-lg-6">
+                        <div class="partners__card">
+                          <img src="img/partners/gen-2.png" srcset="img/partners/gen-2@2x.png 2x">
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="partners__col col-1-5 col-lg-6">
-                    <div class="partners__card">
-                      <img src="img/partners/gen-2.png" srcset="img/partners/gen-2@2x.png 2x">
-                    </div>
-                  </div>
-                  <div class="partners__col col-1-5 col-lg-6">
-                    <div class="partners__card partners__card--bl">
-                      <img src="img/partners/gen-3.png" srcset="img/partners/gen-3@2x.png 2x">
-                    </div>
-                  </div>
-                  <div class="partners__col col-1-5 col-lg-6">
-                    <div class="partners__card">
-                      <img src="img/partners/gen-4.png" srcset="img/partners/gen-4@2x.png 2x">
+                  <div class="partners__col col-2-5 col-lg-12">
+                    <h5 class="h5-title c-accent mt-lg-1">При поддержке</h5>
+                    <div class="row partners__row partners__row--sub">
+                      <div class="partners__col col-6 col-lg-6">
+                        <div class="partners__card partners__card--bl">
+                          <img src="img/partners/gen-3.png" srcset="img/partners/gen-3@2x.png 2x">
+                        </div>
+                      </div>
+                      <div class="partners__col col-6 col-lg-6">
+                        <div class="partners__card">
+                          <img src="img/partners/gen-4.png" srcset="img/partners/gen-4@2x.png 2x">
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="partners__col col-1-5 col-lg-12">
-                    <div class="partners__card partners__card--bl">
-                      <img src="img/partners/gen-5.png" srcset="img/partners/gen-5@2x.png 2x">
+                    <h5 class="h5-title c-accent mt-lg-1">Стратегический партнёр</h5>
+                    <div class="row partners__row partners__row--sub">
+                      <div class="partners__col col-12">
+                        <div class="partners__card partners__card--bl">
+                          <img src="img/partners/gen-5.png" srcset="img/partners/gen-5@2x.png 2x">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1153,7 +1293,7 @@
               <div class="partners__section">
                 <h5 class="h5-title c-accent">Официальные партнёры</h5>
                 <div class="row partners__row partners__row--sub">
-                  <div class="partners__col col-4 col-sm-12">
+                  <div class="partners__col col-4 col-sm-6">
                     <div class="partners__card partners__card--bl">
                       <img src="img/partners/off-1.png" srcset="img/partners/off-1@2x.png 2x">
                     </div>
@@ -1163,7 +1303,7 @@
                       <img src="img/partners/off-2.png" srcset="img/partners/off-2@2x.png 2x">
                     </div>
                   </div>
-                  <div class="partners__col col-4 col-sm-6">
+                  <div class="partners__col col-4 col-sm-12">
                     <div class="partners__card">
                       <img src="img/partners/off-3.png" srcset="img/partners/off-3@2x.png 2x">
                     </div>
