@@ -86,12 +86,12 @@
                       </li>
                     </ul>
                     <div class="header__actions">
-                      <div class="header__action">
+                      <div class="header__action header__action--location">
                         <svg class="ico ico-mono-location-outline">
                           <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
                         </svg>
                         <span class="header__action-text">Москва</span>
-                        <a class="header__language" href="#">
+                        <a class="header__language js-open-overlay" href="#" data-id="cities">
                           <span>Изменить</span>
                           <svg class="ico ico-mono-caret">
                             <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
@@ -120,21 +120,139 @@
                     </div>
                   </div>
                   <!-- menu-->
-                  <ul class="header__menu">
+                  <ul class="header__menu js-teleport" data-teleport-to="mobilenavi" data-teleport-condition="&lt;992">
                     <li>
                       <a href="homepage.html">Новости</a>
                     </li>
-                    <li>
-                      <a href="page.html">О Фестивале</a>
+                    <li class="has-ul">
+                      <a href="page.html">
+                        <span>О Фестивале</span>
+                        <svg class="ico ico-mono-caret">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
+                        </svg>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="#">Новости</a>
+                        </li>
+                        <li>
+                          <a href="#">Мероприятия Фестиваля</a>
+                        </li>
+                        <li>
+                          <a href="#">Оставить отзыв</a>
+                        </li>
+                        <li>
+                          <a href="#">Частые вопросы</a>
+                        </li>
+                        <li>
+                          <a href="#">Контакты</a>
+                        </li>
+                        <li>
+                          <a href="#">Архив</a>
+                        </li>
+                      </ul>
                     </li>
-                    <li>
-                      <a href="page.html">Медиатека</a>
+                    <li class="has-ul">
+                      <a href="page.html">
+                        <span>Медиатека</span>
+                        <svg class="ico ico-mono-caret">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
+                        </svg>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="#">Вся медиатека</a>
+                        </li>
+                        <li>
+                          <a href="#">Фотогалерея</a>
+                        </li>
+                        <li>
+                          <a href="#">Видеогалерея</a>
+                        </li>
+                        <li>
+                          <a href="#">Научно-популярные статьи</a>
+                        </li>
+                        <li>
+                          <a href="#">Материалы для скачивания</a>
+                        </li>
+                        <li>
+                          <a href="#">Пресса о нас</a>
+                        </li>
+                      </ul>
                     </li>
-                    <li>
-                      <a href="page.html">Конкурсы</a>
+                    <li class="has-ul">
+                      <a href="page.html">
+                        <span>Конкурсы</span>
+                        <svg class="ico ico-mono-caret">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
+                        </svg>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="#">Все конкурсы</a>
+                        </li>
+                        <li>
+                          <a href="#">Мир науки глазами детей</a>
+                        </li>
+                        <li>
+                          <a href="#">Ученые будущего</a>
+                        </li>
+                        <li>
+                          <a href="#">Снимай науку!</a>
+                        </li>
+                        <li>
+                          <a href="#">Инновационная журналистика</a>
+                        </li>
+                        <li>
+                          <a href="#">STEM – центры</a>
+                        </li>
+                      </ul>
                     </li>
-                    <li>
-                      <a href="page.html">Мероприятия</a>
+                    <li class="has-ul">
+                      <a href="page.html">
+                        <span>Мероприятия</span>
+                        <svg class="ico ico-mono-caret">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
+                        </svg>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="#">Все мероприятия</a>
+                        </li>
+                        <li>
+                          <a href="#">Выставки</a>
+                        </li>
+                        <li>
+                          <a href="#">Лекции</a>
+                        </li>
+                        <li>
+                          <a href="#">Мастер-классы</a>
+                        </li>
+                        <li>
+                          <a href="#">Научные шоу</a>
+                        </li>
+                        <li>
+                          <a href="#">Презентации</a>
+                        </li>
+                        <li>
+                          <a href="#">Телемосты</a>
+                        </li>
+                        <li>
+                          <a href="#">Экскурсии</a>
+                        </li>
+                        <li>
+                          <div class="header__menu-separator"></div>
+                        </li>
+                        <li>
+                          <a href="#">Мероприятия на карте</a>
+                        </li>
+                        <li>
+                          <a href="#">Онлайн</a>
+                        </li>
+                        <li>
+                          <a href="#">Офлайн</a>
+                        </li>
+                      </ul>
                     </li>
                     <li>
                       <a href="page.html">Прессе</a>
@@ -147,22 +265,1031 @@
               </div>
             </div>
           </header>
+          <!-- Overlay-->
+          <div class="overlay" data-overlay-id="cities">
+            <div class="overlay__bg"></div>
+            <div class="overlay__content">
+              <div class="container">
+                <div class="overlay__wrapper">
+                  <div class="overlay__close">
+                    <svg class="ico ico-mono-close">
+                      <use xlink:href="img/sprite-mono.svg#ico-mono-close"></use>
+                    </svg>
+                  </div>
+                  <div class="overlay__scroller">
+                    <div class="overlay__cities">
+                      <div class="row">
+                        <div class="col col-3 col-md-6">
+                          <a href="#">Абакан</a>
+                          <a href="#">Авторемзавод</a>
+                          <a href="#">Алханчурт</a>
+                          <a href="#">Ангарск</a>
+                          <a href="#">Апатиты</a>
+                          <a href="#">Арзамас</a>
+                          <a href="#">Армавир</a>
+                          <a href="#">Армхи</a>
+                          <a href="#">Архангельск</a>
+                          <a href="#">Архонская</a>
+                          <a href="#">Астрахань</a>
+                          <a href="#">Балаково</a>
+                          <a href="#">Балашов</a>
+                          <a href="#">Барнаул</a>
+                          <a href="#">Белгород</a>
+                          <a href="#">Бердск</a>
+                          <a href="#">Беслан</a>
+                          <a href="#">Бийск</a>
+                          <a href="#">Биробиджан</a>
+                          <a href="#">Благовещенск</a>
+                          <a href="#">Ближняя Игуменка</a>
+                          <a href="#">Борисоглебск</a>
+                          <a href="#">Боровичи</a>
+                          <a href="#">Брянск</a>
+                          <a href="#">Бузулук</a>
+                          <a href="#">Ведлозеро</a>
+                          <a href="#">Великий Новгород</a>
+                          <a href="#">Владивосток</a>
+                          <a href="#">Владикавказ</a>
+                          <a href="#">Владимир</a>
+                          <a href="#">Волгоград</a>
+                          <a href="#">Вологда</a>
+                          <a href="#">Воронеж</a>
+                          <a href="#">Выборг</a>
+                          <a href="#">Выкса</a>
+                          <a href="#">Вязьма</a>
+                          <a href="#">г Москва</a>
+                          <a href="#">г. Владивосток</a>
+                          <a href="#">г.Кстово</a>
+                          <a href="#">г.Обнинск</a>
+                          <a href="#">Геленджик</a>
+                          <a href="#">Глазов</a>
+                          <a href="#">Горно-Алтайск</a>
+                          <a href="#">город Тверь</a>
+                          <a href="#">Грозный</a>
+                          <a href="#">Губкин</a>
+                          <a href="#">Дедеркой</a>
+                          <a href="#">Дедеркой, Туапсинский район</a>
+                          <a href="#">Десногорск</a>
+                          <a href="#">Димитровград</a>
+                          <a href="#">Долгопрудный</a>
+                          <a href="#">Дондыкар</a>
+                          <a href="#">Дубна</a>
+                          <a href="#">Екатеринбург</a>
+                          <a href="#">Елец</a>
+                          <a href="#">Звенигород</a>
+                          <a href="#">Зеленоград</a>
+                          <a href="#">Змеиногорск</a>
+                          <a href="#">Иваново</a>
+                          <a href="#">Ижевск</a>
+                          <a href="#">Иркутск</a>
+                          <a href="#">Ишим</a>
+                          <a href="#">Йошкар-Ола</a>
+                        </div>
+                        <div class="col col-3 col-md-6">
+                          <a href="#">Казань</a>
+                          <a href="#">Калининград</a>
+                          <a href="#">Калуга</a>
+                          <a href="#">Канаш</a>
+                          <a href="#">Кемерово</a>
+                          <a href="#">Киров</a>
+                          <a href="#">Кировск</a>
+                          <a href="#">Ковров</a>
+                          <a href="#">Кольцово</a>
+                          <a href="#">Комсомольск-на-Амуре</a>
+                          <a href="#">Кострома</a>
+                          <a href="#">Красногорск</a>
+                          <a href="#">Краснодар</a>
+                          <a href="#">Краснокаменск</a>
+                          <a href="#">Красноярск</a>
+                          <a href="#">Курган</a>
+                          <a href="#">Курск</a>
+                          <a href="#">Куртат</a>
+                          <a href="#">Кызыл</a>
+                          <a href="#">Лабытнанги</a>
+                          <a href="#">Лесосибирск</a>
+                          <a href="#">Липецк</a>
+                          <a href="#">Магас</a>
+                          <a href="#">Магнитогорск</a>
+                          <a href="#">Майкоп</a>
+                          <a href="#">Махачкала</a>
+                          <a href="#">Мелеуз</a>
+                          <a href="#">Менделеево</a>
+                          <a href="#">Миасс</a>
+                          <a href="#">Михайловское</a>
+                          <a href="#">Мичуринск</a>
+                          <a href="#">Моздок</a>
+                          <a href="#">Мончегорск</a>
+                          <a href="#">Москва</a>
+                          <a href="#">Москва, Зеленоград</a>
+                          <a href="#">Мурманск</a>
+                          <a href="#">Мурмнск</a>
+                          <a href="#">Мытищи</a>
+                          <a href="#">Надым</a>
+                          <a href="#">Нижнекамск</a>
+                          <a href="#">Нижний Новгород</a>
+                          <a href="#">Нововолково</a>
+                          <a href="#">Новокузнецк</a>
+                          <a href="#">Новокуйбышевск</a>
+                          <a href="#">Новомосковск</a>
+                          <a href="#">Новороссийск</a>
+                          <a href="#">Новосибирск</a>
+                          <a href="#">Норильск</a>
+                          <a href="#">Обнинск</a>
+                          <a href="#">Октябрьский</a>
+                          <a href="#">Октябрьское</a>
+                          <a href="#">Омск</a>
+                          <a href="#">Орел</a>
+                          <a href="#">п. Дивноморское</a>
+                          <a href="#">п. Калининский</a>
+                          <a href="#">п. Караваево</a>
+                          <a href="#">п. Майский</a>
+                          <a href="#">п. Нижний Цей</a>
+                          <a href="#">п. Октябрьский</a>
+                          <a href="#">п. Притеречный</a>
+                          <a href="#">п. Прохоровка</a>
+                          <a href="#">п. Сернур</a>
+                          <a href="#">п. Тельмана</a>
+                        </div>
+                        <div class="col col-3 col-md-6">
+                          <a href="#">п.г.т. Усть-Кинельский</a>
+                          <a href="#">п.Прохоровка</a>
+                          <a href="#">п.Развилка</a>
+                          <a href="#">п.Ушаково</a>
+                          <a href="#">пгт Шерловая гора</a>
+                          <a href="#">пгт. Могойтуй</a>
+                          <a href="#">Пенза</a>
+                          <a href="#">Пермь</a>
+                          <a href="#">Петровск</a>
+                          <a href="#">Петрозаводск</a>
+                          <a href="#">Петропавловск-Камчатский</a>
+                          <a href="#">Печерск</a>
+                          <a href="#">Плишкино</a>
+                          <a href="#">Полярные Зори</a>
+                          <a href="#">Полярные Зори город</a>
+                          <a href="#">Пос. Института Полиомиелита</a>
+                          <a href="#">Прохоровка</a>
+                          <a href="#">Пряжа</a>
+                          <a href="#">Псков</a>
+                          <a href="#">Пущино</a>
+                          <a href="#">Пятигорск</a>
+                          <a href="#">р.п. Богородское</a>
+                          <a href="#">р.п. Кольцово</a>
+                          <a href="#">Раменское</a>
+                          <a href="#">Рассказово</a>
+                          <a href="#">Рославль</a>
+                          <a href="#">Ростов-на-Дону</a>
+                          <a href="#">РСО-Алания, с. Ногир</a>
+                          <a href="#">Рубцовск</a>
+                          <a href="#">Рязань</a>
+                          <a href="#">с. Алтайское</a>
+                          <a href="#">с. Виноградное</a>
+                          <a href="#">с. Гизель</a>
+                          <a href="#">с. Заманкул</a>
+                          <a href="#">с. Зильги</a>
+                          <a href="#">с. Ир</a>
+                          <a href="#">с. Камбилеевское</a>
+                          <a href="#">с. Киевское</a>
+                          <a href="#">с. Кизляр</a>
+                          <a href="#">с. Комгарон</a>
+                          <a href="#">с. Крошнозеро</a>
+                          <a href="#">с. Ласково</a>
+                          <a href="#">с. Михайловское</a>
+                          <a href="#">с. Ногир</a>
+                          <a href="#">с. Октябрьское</a>
+                          <a href="#">с. Паратунка</a>
+                          <a href="#">с. Предгорное</a>
+                          <a href="#">с. Раздольное</a>
+                          <a href="#">с. Сухотское</a>
+                          <a href="#">с. Тарское</a>
+                          <a href="#">с. Троицкое</a>
+                          <a href="#">с.Дарг-Кох</a>
+                          <a href="#">с.Цей</a>
+                          <a href="#">с.Чермен</a>
+                          <a href="#">Салават</a>
+                          <a href="#">Салехард</a>
+                          <a href="#">Самара</a>
+                          <a href="#">Санкт-Петербург</a>
+                          <a href="#">Саранск</a>
+                          <a href="#">Саратов</a>
+                          <a href="#">Сасово</a>
+                          <a href="#">Саяногорск</a>
+                          <a href="#">Севастополь</a>
+                        </div>
+                        <div class="col col-3 col-md-6">
+                          <a href="#">Северодвинск</a>
+                          <a href="#">Северск</a>
+                          <a href="#">село Лесниково</a>
+                          <a href="#">село Полковниково</a>
+                          <a href="#">село Федоскино</a>
+                          <a href="#">село Холуй</a>
+                          <a href="#">Сергиев Посад</a>
+                          <a href="#">Сибай</a>
+                          <a href="#">Симферополь</a>
+                          <a href="#">Смоленск</a>
+                          <a href="#">Сосновый Бор</a>
+                          <a href="#">Сочи</a>
+                          <a href="#">ст. Луковская</a>
+                          <a href="#">ст. Старая Станица</a>
+                          <a href="#">ст. Терская</a>
+                          <a href="#">ст. Черноярская</a>
+                          <a href="#">Ставрополь</a>
+                          <a href="#">Стародуб</a>
+                          <a href="#">Старый Оскол</a>
+                          <a href="#">Стерлитамак</a>
+                          <a href="#">Суздаль</a>
+                          <a href="#">Сургут</a>
+                          <a href="#">Сызрань</a>
+                          <a href="#">Сыктывкар</a>
+                          <a href="#">Таганрог</a>
+                          <a href="#">Тамбов</a>
+                          <a href="#">Тамбовка</a>
+                          <a href="#">Тара</a>
+                          <a href="#">Тверь</a>
+                          <a href="#">Темрюк</a>
+                          <a href="#">Тобольск</a>
+                          <a href="#">Тольятти</a>
+                          <a href="#">Томск</a>
+                          <a href="#">Томск (Томская обл.)</a>
+                          <a href="#">Троицк</a>
+                          <a href="#">Троицк Москва</a>
+                          <a href="#">Троицк, Москва</a>
+                          <a href="#">Туапсе</a>
+                          <a href="#">Туймазы</a>
+                          <a href="#">Тула</a>
+                          <a href="#">Тюмень</a>
+                          <a href="#">Улан-Удэ</a>
+                          <a href="#">Ульяновск</a>
+                          <a href="#">Усолье-Сибирское</a>
+                          <a href="#">Уфа</a>
+                          <a href="#">Ухта</a>
+                          <a href="#">Фиагдон</a>
+                          <a href="#">Хабаровск</a>
+                          <a href="#">Ханты-Мансийск</a>
+                          <a href="#">Химки</a>
+                          <a href="#">Чебоксары</a>
+                          <a href="#">Челябинск</a>
+                          <a href="#">Череповец</a>
+                          <a href="#">Черкесск</a>
+                          <a href="#">Черноголовка</a>
+                          <a href="#">Чита</a>
+                          <a href="#">Шадринск</a>
+                          <a href="#">Шатура</a>
+                          <a href="#">Шелтозеро</a>
+                          <a href="#">Энгельс</a>
+                          <a href="#">Якутск</a>
+                          <a href="#">Ярославль</a>
+                          <a href="#">Ярцево</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- MOBILE NAVI-->
           <div class="mobile-navi">
             <div class="mobile-navi__wrapper">
-              <ul class="mobile-navi__menu">
-                <li>
-                  <a href="homepage.html">Homepage</a>
-                </li>
-                <li>
-                  <a href="page.html">Shop</a>
-                </li>
-                <li>
-                  <a href="page.html">Lorem</a>
-                </li>
-              </ul>
-              <div class="mobile-navi__cta">
-                <a href="mailto:sergey@khmelevskoy.co">sergey@khmelevskoy.co</a>
+              <div class="mobile-navi__decor type-1">
+                <svg width="123" height="179" viewBox="0 0 123 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                   d="M37.3197 141.679C37.32 141.679 37.3202 141.679 37.3203 141.679C37.3205 141.679 37.3207 141.68 37.321 141.68C37.3344 141.694 37.5173 141.887 38.2099 142.047C38.9818 142.225 40.2601 142.325 42.1699 142.083C46.0514 141.59 51.3854 139.835 57.9224 136.525C70.9087 129.949 86.8884 118.137 102.513 102.513C118.137 86.8882 129.949 70.9086 136.525 57.9222C139.835 51.3852 141.591 46.0512 142.083 42.1698C142.326 40.26 142.225 38.9817 142.047 38.2097C141.887 37.5171 141.694 37.3343 141.68 37.3209L141.679 37.3202L141.679 37.3195C141.665 37.3054 141.483 37.1129 140.79 36.9528C140.018 36.7744 138.74 36.674 136.83 36.9164C132.948 37.4091 127.614 39.1646 121.077 42.4748C108.091 49.0509 92.1114 60.8627 76.4871 76.4869C60.8628 92.1112 49.0511 108.091 42.475 121.077C39.1648 127.614 37.4093 132.948 36.9166 136.83C36.6742 138.739 36.7745 140.018 36.953 140.79C37.1131 141.482 37.3055 141.665 37.3197 141.679ZM27.1409 113.312C34.7404 98.3049 47.7835 80.883 64.3333 64.3332C80.8832 47.7833 98.3051 34.7402 113.313 27.1407C120.772 23.3631 128.083 20.7007 134.666 19.8652C141.105 19.0479 148.492 19.8254 153.833 25.1664C159.174 30.5074 159.952 37.895 159.134 44.3341C158.299 50.9163 155.636 58.2272 151.859 65.6871C144.259 80.6945 131.216 98.1165 114.666 114.666C98.1166 131.216 80.6947 144.259 65.6873 151.859C58.2274 155.636 50.9164 158.299 44.3343 159.134C37.8952 159.952 30.5076 159.174 25.1666 153.833C19.8255 148.492 19.048 141.104 19.8654 134.665C20.7008 128.083 23.3633 120.772 27.1409 113.312Z"
+                   fill="#E54323" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                   d="M37.3219 37.3197C37.3215 37.32 37.3213 37.3202 37.3212 37.3203C37.3211 37.3205 37.3208 37.3207 37.3205 37.321C37.3064 37.3344 37.1139 37.5173 36.9538 38.2099C36.7754 38.9818 36.675 40.2601 36.9174 42.1699C37.4101 46.0514 39.1656 51.3854 42.4758 57.9224C49.0519 70.9087 60.8637 86.8884 76.488 102.513C92.1122 118.137 108.092 129.949 121.078 136.525C127.615 139.835 132.949 141.591 136.831 142.083C138.741 142.326 140.019 142.225 140.791 142.047C141.483 141.887 141.666 141.694 141.68 141.68L141.68 141.679L141.681 141.679C141.695 141.665 141.888 141.483 142.048 140.79C142.226 140.018 142.326 138.74 142.084 136.83C141.591 132.948 139.836 127.614 136.526 121.077C129.95 108.091 118.138 92.1114 102.514 76.4871C86.8893 60.8628 70.9096 49.0511 57.9232 42.475C51.3862 39.1648 46.0522 37.4093 42.1708 36.9166C40.261 36.6742 38.9827 36.7745 38.2107 36.953C37.5181 37.1131 37.3353 37.3055 37.3219 37.3197ZM65.6881 27.1409C80.6955 34.7404 98.1175 47.7835 114.667 64.3333C131.217 80.8832 144.26 98.3051 151.86 113.313C155.637 120.772 158.3 128.083 159.135 134.666C159.953 141.105 159.175 148.492 153.834 153.833C148.493 159.174 141.105 159.952 134.666 159.134C128.084 158.299 120.773 155.636 113.313 151.859C98.306 144.259 80.884 131.216 64.3342 114.666C47.7843 98.1166 34.7412 80.6947 27.1417 65.6873C23.3642 58.2274 20.7017 50.9164 19.8662 44.3343C19.0489 37.8952 19.8264 30.5076 25.1674 25.1666C30.5084 19.8255 37.896 19.048 44.3351 19.8654C50.9173 20.7008 58.2282 23.3633 65.6881 27.1409Z"
+                   fill="#E54323" />
+                </svg>
+
+              </div>
+              <div class="mobile-navi__decor type-2">
+                <svg width="106" height="122" viewBox="0 0 106 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_decor2)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M77.2759 63.5686C75.6193 62.4158 73.7872 61.0418 72.007 59.5201C56.0576 45.8313 44.4058 36.5402 36.6244 33.1493C28.4465 29.5774 22.8252 31.1806 19.1774 35.9368C16.0422 40.0718 16.0274 45.8015 19.3847 52.5093C22.0096 57.7524 26.7684 64.0274 30.9119 70.523C34.2701 75.7511 37.4314 80.9761 37.3871 85.9393C37.3515 89.947 34.3609 92.9889 27.7486 95.7071C26.9645 96.0271 26.251 96.5004 25.6496 97.0996C25.0482 97.6987 24.5709 98.4117 24.2454 99.1971C23.9199 99.9825 23.7528 100.825 23.7537 101.674C23.7547 102.524 23.9236 103.365 24.2508 104.148C24.9218 105.734 26.1854 106.99 27.7703 107.647C29.3553 108.305 31.1352 108.31 32.7282 107.663C46.1862 102.14 50.3235 94.2189 50.3795 86.0749C50.4279 80.7273 48.4092 74.9751 45.2916 69.2642C41.7674 62.8101 36.8467 56.355 33.2734 50.6837C32.0811 48.8839 31.0614 46.9741 30.2281 44.9798C30.1667 44.824 30.1144 44.6646 30.0717 44.5026C30.5474 44.6252 31.0133 44.7833 31.4654 44.9755C35.7434 47.1047 39.7732 49.7027 43.4815 52.7225C49.1314 57.0099 55.8003 62.6151 63.5881 69.3037C70.335 75.0791 75.2071 78.1632 78.4164 79.334C83.2775 81.1216 86.5594 79.899 88.638 78.0929C90.7165 76.2867 92.2899 72.9522 91.6936 67.8423C90.4445 57.2342 78.4963 32.7646 69.1357 13.354C68.3758 11.8043 67.0395 10.6188 65.4151 10.0533C63.7907 9.48774 62.0083 9.58738 60.4523 10.3307C59.6881 10.6963 59.0029 11.2102 58.4364 11.8427C57.8699 12.4752 57.4332 13.2139 57.1516 14.0161C56.8701 14.8182 56.7491 15.6681 56.7957 16.5165C56.8424 17.3649 57.0557 18.1951 57.4234 18.9592C63.9002 32.3859 71.8121 48.299 76.1264 59.8776C76.5594 61.0757 76.9591 62.3519 77.3074 63.5895"
+                     fill="#FCBA27" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_decor2">
+                      <rect width="80.2851" height="104.099" fill="white" transform="translate(27.9414) rotate(15)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+              </div>
+              <div class="mobile-navi__decor type-3">
+                <svg width="230" height="144" viewBox="0 0 230 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_decor3)">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M179.284 113.989C179.408 126.749 175.744 139.258 168.756 149.928C161.768 160.598 151.772 168.947 140.037 173.917C128.302 178.886 115.358 180.251 102.847 177.838C90.3358 175.425 78.8231 169.343 69.77 160.364C60.717 151.385 54.5321 139.915 52.0005 127.409C49.469 114.903 50.705 101.925 55.5516 90.1242C60.3982 78.3231 68.6368 68.2304 79.2215 61.1277C89.8061 54.0251 102.259 50.2328 115 50.2322C131.954 50.1517 148.248 56.8142 160.301 68.7564C172.354 80.6986 179.182 96.9439 179.284 113.924V113.989ZM163.213 113.924C163.316 123.496 160.576 132.883 155.341 140.891C150.106 148.9 142.612 155.17 133.812 158.904C125.012 162.639 115.302 163.669 105.916 161.865C96.5292 160.061 87.8901 155.503 81.0955 148.771C74.3008 142.039 69.6573 133.437 67.7546 124.056C65.8519 114.675 66.776 104.939 70.4095 96.0858C74.0429 87.2321 80.2218 79.6598 88.1612 74.3306C96.1007 69.0014 105.442 66.1558 115 66.1552C127.717 66.092 139.938 71.088 148.979 80.0452C158.019 89.0025 163.139 101.188 163.213 113.924Z"
+                     fill="#E54323" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M207.566 113.989C207.44 138.455 197.619 161.869 180.261 179.084C162.902 196.299 139.429 205.905 115.001 205.79C63.9184 205.79 22.4355 164.74 22.4355 114.032C22.4355 63.325 63.9184 22.1453 115.001 22.1453C139.421 22.0304 162.889 31.6304 180.245 48.8359C197.602 66.0414 207.429 89.4445 207.566 113.903V113.989ZM194.623 113.903C194.798 129.696 190.283 145.185 181.651 158.403C173.02 171.62 160.661 181.971 146.143 188.14C131.626 194.308 115.606 196.017 100.118 193.049C84.6291 190.08 70.3707 182.568 59.1532 171.468C47.9357 160.367 40.2652 146.178 37.1158 130.702C33.9664 115.226 35.4802 99.1618 41.4648 84.5494C47.4495 69.937 57.6352 57.4355 70.7282 48.6326C83.8213 39.8296 99.2311 35.1223 115.001 35.1084C135.985 35.0107 156.15 43.2585 171.067 58.0404C185.983 72.8223 194.433 92.9296 194.558 113.946"
+                     fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M230 113.989C230 176.904 178.486 228 115 228C51.5138 228 0 176.904 0 113.989C0 51.0748 51.5354 0 115 0C178.465 0 230 51.0748 230 113.989ZM220.249 113.989C220.249 171.567 173.093 218.321 115 218.321C56.9068 218.321 9.75052 171.567 9.75052 113.989C9.75052 56.4113 56.9068 9.6791 114.978 9.6791C173.05 9.6791 220.228 56.4113 220.228 113.989"
+                     fill="#E54323" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_decor3">
+                      <rect width="230" height="228" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+              </div>
+              <div class="mobile-navi__scroller">
+                <div class="mobile-navi__cta">
+                  <div class="header__action mobile-navi__location">
+                    <svg class="ico ico-mono-location-outline">
+                      <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                    </svg>
+                    <span class="header__action-text">Москва</span>
+                    <a class="header__language js-open-overlay" href="#" data-id="cities">
+                      <span>Изменить</span>
+                      <svg class="ico ico-mono-caret">
+                        <use xlink:href="img/sprite-mono.svg#ico-mono-caret"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <ul class="mobile-navi__socials social-list social-list--c-primary js-teleport"
+                   data-teleport-condition="&lt;576" data-teleport-to="mobilenaviSocials">
+                    <li>
+                      <a href="#">
+                        <svg class="ico ico-mono-social-facebook">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-social-facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="ico ico-mono-social-vk">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-social-vk"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="ico ico-mono-social-instagram">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-social-instagram"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="ico ico-mono-social-youtube">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-social-youtube"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="ico ico-mono-social-tiktok">
+                          <use xlink:href="img/sprite-mono.svg#ico-mono-social-tiktok"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <ul class="mobile-navi__menu" data-teleport-target="mobilenavi"></ul>
+                <ul class="mobile-navi__socials mobile-navi__socials--sm social-list social-list--c-primary"
+                 data-teleport-target="mobilenaviSocials"></ul>
+              </div>
+            </div>
+          </div>
+          <!-- event page-->
+          <div class="event-page">
+            <div class="event-page__holder">
+              <div class="container">
+                <div class="event-page__breadcrumbs">
+                  <!-- BREADCRUMBS-->
+                  <div class="breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                      <li>
+                        <a href="#" itemprop="item">Главная</a>
+                      </li>
+                      <li>
+                        <span>Мероприятия</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <h1 class="h2-title c-accent">Мероприятия</h1>
+                <div class="event-page__wrapper">
+                  <!-- sidebar-->
+                  <div class="event-page__sidebar">
+                    <form action="#">
+                      <!-- section-->
+                      <div class="event-page__sidebar-section">
+                        <div class="ui-group">
+                          <label for="categories">Смотреть категории</label>
+                          <select class="js-choices ui-input" id="categories">
+                            <option>Все</option>
+                            <option>Категория 1</option>
+                            <option>Категория 1</option>
+                          </select>
+                        </div>
+                        <div class="ui-group">
+                          <label for="event_name">Название мероприятия</label>
+                          <input class="ui-input" type="text" id="event_name">
+                        </div>
+                        <div class="ui-group">
+                          <label for="city">Выбрать город</label>
+                          <select class="js-choices ui-input" id="city" placeholder="Выберите">
+                            <option>Все</option>
+                            <option>Категория 1</option>
+                            <option>Категория 1</option>
+                          </select>
+                        </div>
+                        <div class="event-page__sidebar-cta">
+                          <button class="btn btn-filled btn--sm" type="submit">Применить</button>
+                          <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
+                        </div>
+                      </div>
+                      <!-- section-->
+                      <div class="event-page__sidebar-section">
+                        <div class="ui-group">
+                          <label>Формат:</label>
+                          <div class="ui-checkbox">
+                            <input id="format_1" type="checkbox" name="format">
+                            <label for="format_1">
+                              <span>Онлайн</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="format_1" type="checkbox" name="format">
+                            <label for="format_1">
+                              <span>Оффлайн</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="ui-group">
+                          <label>Область знаний:</label>
+                          <div class="ui-checkbox">
+                            <input id="topic_1" type="checkbox" name="topic">
+                            <label for="topic_1">
+                              <span>Биология и науки о Жизни</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_2" type="checkbox" name="topic">
+                            <label for="topic_2">
+                              <span>Гуманитарные науки</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_3" type="checkbox" name="topic">
+                            <label for="topic_3">
+                              <span>Другое</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_4" type="checkbox" name="topic">
+                            <label for="topic_4">
+                              <span>Математика и информатика</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_5" type="checkbox" name="topic">
+                            <label for="topic_5">
+                              <span>Науки о Земле</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_6" type="checkbox" name="topic">
+                            <label for="topic_6">
+                              <span>Общественные науки</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_7" type="checkbox" name="topic">
+                            <label for="topic_7">
+                              <span>Техника и инженерные науки</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_8" type="checkbox" name="topic">
+                            <label for="topic_8">
+                              <span>Физика и астрономия</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="topic_9" type="checkbox" name="topic">
+                            <label for="topic_9">
+                              <span>Химия и нанотехнологии</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="ui-group">
+                          <label>Тип мероприятия:</label>
+                          <div class="ui-checkbox">
+                            <input id="type_1" type="checkbox" name="type">
+                            <label for="type_1">
+                              <span>Лекция</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_2" type="checkbox" name="type">
+                            <label for="type_2">
+                              <span>Презентация</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_3" type="checkbox" name="type">
+                            <label for="type_3">
+                              <span>Мастер-класс</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_4" type="checkbox" name="type">
+                            <label for="type_4">
+                              <span>День открытых дверей</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_5" type="checkbox" name="type">
+                            <label for="type_5">
+                              <span>Экскурсия</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_6" type="checkbox" name="type">
+                            <label for="type_6">
+                              <span>Фильм</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_7" type="checkbox" name="type">
+                            <label for="type_7">
+                              <span>Концерт, научное шоу</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_8" type="checkbox" name="type">
+                            <label for="type_8">
+                              <span>Конкурс</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_9" type="checkbox" name="type">
+                            <label for="type_9">
+                              <span>Конференция, научная школа</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_10" type="checkbox" name="type">
+                            <label for="type_10">
+                              <span>Круглый стол</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_11" type="checkbox" name="type">
+                            <label for="type_11">
+                              <span>Олимпиада</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="type_12" type="checkbox" name="type">
+                            <label for="type_12">
+                              <span>Семинар</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="ui-group">
+                          <label>Целевая аудитория</label>
+                          <div class="ui-checkbox">
+                            <input id="aud_1" type="checkbox" name="aud">
+                            <label for="aud_1">
+                              <span>Абитуриенты</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="aud_2" type="checkbox" name="aud">
+                            <label for="aud_2">
+                              <span>Будет интересно всем</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="aud_3" type="checkbox" name="aud">
+                            <label for="aud_3">
+                              <span>Взрослые</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="aud_4" type="checkbox" name="aud">
+                            <label for="aud_4">
+                              <span>Специалисты</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="aud_5" type="checkbox" name="aud">
+                            <label for="aud_5">
+                              <span>Студенты</span>
+                            </label>
+                          </div>
+                          <div class="ui-checkbox">
+                            <input id="aud_6" type="checkbox" name="aud">
+                            <label for="aud_6">
+                              <span>Школьники</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="event-page__sidebar-cta">
+                          <button class="btn btn-filled btn--sm" type="submit">Применить</button>
+                          <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- content-->
+                  <div class="event-page__content">
+                    <div class="row">
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__image">
+                            <img src="img/events/event-3.jpg" srcset="img/events/event-3@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__image">
+                            <img src="img/events/event-1.jpg" srcset="img/events/event-1@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like is-active">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">СОВРЕМЕННЫЕ ТЕНДЕНЦИИ ИНФОРМАЦИОННОЙ ПОДДЕРЖКИ И НАУКИ…</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__tag">
+                            <img src="img/decor/currentEvent.svg">
+                          </div>
+                          <div class="eventCard__image">
+                            <img src="img/events/event-4.jpg" srcset="img/events/event-4@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__image">
+                            <img src="img/events/event-2.jpg" srcset="img/events/event-2@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like is-active">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">СОВРЕМЕННЫЕ ТЕНДЕНЦИИ ИНФОРМАЦИОННОЙ ПОДДЕРЖКИ И НАУКИ…</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__tag">
+                            <img src="img/decor/currentEvent.svg">
+                          </div>
+                          <div class="eventCard__image">
+                            <img src="img/events/event-4.jpg" srcset="img/events/event-4@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__image">
+                            <img src="img/events/event-3.jpg" srcset="img/events/event-3@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__image">
+                            <img src="img/events/event-1.jpg" srcset="img/events/event-1@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like is-active">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">СОВРЕМЕННЫЕ ТЕНДЕНЦИИ ИНФОРМАЦИОННОЙ ПОДДЕРЖКИ И НАУКИ…</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__tag">
+                            <img src="img/decor/currentEvent.svg">
+                          </div>
+                          <div class="eventCard__image">
+                            <img src="img/events/event-4.jpg" srcset="img/events/event-4@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                      <div class="col col-4 col-xl-6 col-sm-12">
+                        <a class="eventCard" href="#">
+                          <div class="eventCard__tag">
+                            <img src="img/decor/currentEvent.svg">
+                          </div>
+                          <div class="eventCard__image">
+                            <img src="img/events/event-3.jpg" srcset="img/events/event-3@2x.jpg">
+                          </div>
+                          <div class="eventCard__year">2021</div>
+                          <div class="eventCard__date">21 ноября</div>
+                          <div class="eventCard__meta">14:10 — 15:10
+                            <br>Мастер-Класс | Офлайн
+                          </div>
+                          <div class="eventCard__row">
+                            <div class="eventCard__location">
+                              <svg class="ico ico-mono-location-outline">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-location-outline"></use>
+                              </svg>
+                              <span>Тамбов</span>
+                            </div>
+                            <div class="eventCard__like">
+                              <div class="eventCard__like-icon">
+                                <svg class="ico ico-mono-like-outline">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like-outline"></use>
+                                </svg>
+                                <svg class="ico ico-mono-like">
+                                  <use xlink:href="img/sprite-mono.svg#ico-mono-like"></use>
+                                </svg>
+                              </div>
+                              <span>Я ИДУ!</span>
+                            </div>
+                          </div>
+                          <div class="eventCard__arrow dynamic-arrow dynamic-arrow--wide">
+                            <svg class="ico ico-mono-arrow-right-end">
+                              <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-right-end"></use>
+                            </svg>
+                          </div>
+                          <div class="eventCard__title">Конкурс для журналистов и блогеров «ProПигмент»</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="event-page__pagination">
+                      <!-- PAGINATION-->
+                      <div class="pagination">
+                        <div class="pagination__list">
+                          <li class="is-active">
+                            <a href="#">
+                              <span>1</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span>2</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span>3</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span>4</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span>5</span>
+                            </a>
+                          </li>
+                          <li class="pagination__separator">
+                            <span>...</span>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <span>13</span>
+                            </a>
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -172,7 +1299,7 @@
           <div class="container">
             <div class="footer__main">
               <div class="row">
-                <div class="col col-3 col-lg-6">
+                <div class="col col-3 col-lg-6 col-sm-12">
                   <div class="footer__logo">
                     <i class="icon icon-logo"></i>
                   </div>
