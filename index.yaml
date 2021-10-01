@@ -1,0 +1,11 @@
+ProjectTitle: Science-fest
+
+PageList:
+  - file: homepage.html
+    ready: 80
+  - file: city.html
+    ready: 60
+  - file: events.html
+    ready: 10
+  - file: ui.html
+    ready: 100
