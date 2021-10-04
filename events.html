@@ -98,7 +98,7 @@
                           </svg>
                         </a>
                       </div>
-                      <a class="header__action" href="#">
+                      <a class="header__action js-open-overlay" href="#" data-id="search">
                         <svg class="ico ico-mono-search">
                           <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
                         </svg>
@@ -266,7 +266,7 @@
             </div>
           </header>
           <!-- Overlay-->
-          <div class="overlay" data-overlay-id="cities">
+          <div class="overlay" data-overlay-id="cities" data-set-height>
             <div class="overlay__bg"></div>
             <div class="overlay__content">
               <div class="container">
@@ -546,6 +546,25 @@
               </div>
             </div>
           </div>
+          <!-- Overlay-->
+          <div class="overlay" data-overlay-id="search">
+            <div class="overlay__bg"></div>
+            <div class="overlay__content">
+              <div class="container">
+                <div class="overlay__wrapper overlay__wrapper--search">
+                  <form class="overlay__search" action="#">
+                    <input type="search" placeholder="Введите поисковый запрос">
+                    <button class="btn btn-primary btn-primary--b-white btn--sm" type="submit">Поиск</button>
+                  </form>
+                  <div class="overlay__close">
+                    <svg class="ico ico-mono-close">
+                      <use xlink:href="img/sprite-mono.svg#ico-mono-close"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- MOBILE NAVI-->
           <div class="mobile-navi">
             <div class="mobile-navi__wrapper">
@@ -655,6 +674,7 @@
               </div>
             </div>
           </div>
+          <div class="js-header-class" data-class="no-bb"></div>
           <!-- event page-->
           <div class="event-page">
             <div class="event-page__holder">
@@ -675,226 +695,249 @@
                 <h1 class="h2-title c-accent">Мероприятия</h1>
                 <div class="event-page__wrapper">
                   <!-- sidebar-->
-                  <div class="event-page__sidebar">
-                    <form action="#">
-                      <!-- section-->
-                      <div class="event-page__sidebar-section">
-                        <div class="ui-group">
-                          <label for="categories">Смотреть категории</label>
-                          <select class="js-choices ui-input" id="categories">
-                            <option>Все</option>
-                            <option>Категория 1</option>
-                            <option>Категория 1</option>
-                          </select>
-                        </div>
-                        <div class="ui-group">
-                          <label for="event_name">Название мероприятия</label>
-                          <input class="ui-input" type="text" id="event_name">
-                        </div>
-                        <div class="ui-group">
-                          <label for="city">Выбрать город</label>
-                          <select class="js-choices ui-input" id="city" placeholder="Выберите">
-                            <option>Все</option>
-                            <option>Категория 1</option>
-                            <option>Категория 1</option>
-                          </select>
-                        </div>
-                        <div class="event-page__sidebar-cta">
-                          <button class="btn btn-filled btn--sm" type="submit">Применить</button>
-                          <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
+                  <div class="event-page__sidebar filters">
+                    <div class="filters__toggle js-filters-toggle">
+                      <svg class="ico ico-mono-filters">
+                        <use xlink:href="img/sprite-mono.svg#ico-mono-filters"></use>
+                      </svg>
+                      <div class="filters__toggle-text">Фильтры</div>
+                      <div class="filters__toggle-count">
+                        <span>2</span>
+                      </div>
+                    </div>
+                    <form class="filters__form" action="#">
+                      <div class="filters__form-head">
+                        <div class="filters__form-title">Фильтры</div>
+                        <div class="filters__form-close js-filters-close">
+                          <svg class="ico ico-mono-close">
+                            <use xlink:href="img/sprite-mono.svg#ico-mono-close"></use>
+                          </svg>
                         </div>
                       </div>
-                      <!-- section-->
-                      <div class="event-page__sidebar-section">
-                        <div class="ui-group">
-                          <label>Формат:</label>
-                          <div class="ui-checkbox">
-                            <input id="format_1" type="checkbox" name="format">
-                            <label for="format_1">
-                              <span>Онлайн</span>
-                            </label>
+                      <div class="filters__form-wrapper">
+                        <!-- section-->
+                        <div class="event-page__sidebar-section">
+                          <div class="ui-group">
+                            <label for="categories">Смотреть категории</label>
+                            <select class="js-choices ui-input" id="categories">
+                              <option>Все</option>
+                              <option>Категория 1</option>
+                              <option>Категория 1</option>
+                            </select>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="format_1" type="checkbox" name="format">
-                            <label for="format_1">
-                              <span>Оффлайн</span>
-                            </label>
+                          <div class="ui-group">
+                            <label for="event_name">Название мероприятия</label>
+                            <input class="ui-input" type="text" id="event_name">
                           </div>
-                        </div>
-                        <div class="ui-group">
-                          <label>Область знаний:</label>
-                          <div class="ui-checkbox">
-                            <input id="topic_1" type="checkbox" name="topic">
-                            <label for="topic_1">
-                              <span>Биология и науки о Жизни</span>
-                            </label>
+                          <div class="ui-group">
+                            <label for="city">Выбрать город</label>
+                            <select class="js-choices ui-input" id="city" placeholder="Выберите">
+                              <option>Все</option>
+                              <option>Категория 1</option>
+                              <option>Категория 1</option>
+                            </select>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_2" type="checkbox" name="topic">
-                            <label for="topic_2">
-                              <span>Гуманитарные науки</span>
-                            </label>
+                          <div class="event-page__sidebar-cta">
+                            <button class="btn btn-filled btn--sm" type="submit">Применить</button>
+                            <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_3" type="checkbox" name="topic">
-                            <label for="topic_3">
-                              <span>Другое</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_4" type="checkbox" name="topic">
-                            <label for="topic_4">
-                              <span>Математика и информатика</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_5" type="checkbox" name="topic">
-                            <label for="topic_5">
-                              <span>Науки о Земле</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_6" type="checkbox" name="topic">
-                            <label for="topic_6">
-                              <span>Общественные науки</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_7" type="checkbox" name="topic">
-                            <label for="topic_7">
-                              <span>Техника и инженерные науки</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_8" type="checkbox" name="topic">
-                            <label for="topic_8">
-                              <span>Физика и астрономия</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="topic_9" type="checkbox" name="topic">
-                            <label for="topic_9">
-                              <span>Химия и нанотехнологии</span>
-                            </label>
+                          <div class="event-page__sidebar-cta event-page__sidebar-cta--bottom">
+                            <button class="btn btn-filled btn--sm" type="submit">Применить</button>
+                            <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
                           </div>
                         </div>
-                        <div class="ui-group">
-                          <label>Тип мероприятия:</label>
-                          <div class="ui-checkbox">
-                            <input id="type_1" type="checkbox" name="type">
-                            <label for="type_1">
-                              <span>Лекция</span>
-                            </label>
+                        <!-- section-->
+                        <div class="event-page__sidebar-section">
+                          <div class="ui-group">
+                            <label>Формат:</label>
+                            <div class="ui-checkbox">
+                              <input id="format_1" type="checkbox" name="format">
+                              <label for="format_1">
+                                <span>Онлайн</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="format_1" type="checkbox" name="format">
+                              <label for="format_1">
+                                <span>Оффлайн</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="type_2" type="checkbox" name="type">
-                            <label for="type_2">
-                              <span>Презентация</span>
-                            </label>
+                          <div class="ui-group">
+                            <label>Область знаний:</label>
+                            <div class="ui-checkbox">
+                              <input id="topic_1" type="checkbox" name="topic">
+                              <label for="topic_1">
+                                <span>Биология и науки о Жизни</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_2" type="checkbox" name="topic">
+                              <label for="topic_2">
+                                <span>Гуманитарные науки</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_3" type="checkbox" name="topic">
+                              <label for="topic_3">
+                                <span>Другое</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_4" type="checkbox" name="topic">
+                              <label for="topic_4">
+                                <span>Математика и информатика</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_5" type="checkbox" name="topic">
+                              <label for="topic_5">
+                                <span>Науки о Земле</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_6" type="checkbox" name="topic">
+                              <label for="topic_6">
+                                <span>Общественные науки</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_7" type="checkbox" name="topic">
+                              <label for="topic_7">
+                                <span>Техника и инженерные науки</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_8" type="checkbox" name="topic">
+                              <label for="topic_8">
+                                <span>Физика и астрономия</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="topic_9" type="checkbox" name="topic">
+                              <label for="topic_9">
+                                <span>Химия и нанотехнологии</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="type_3" type="checkbox" name="type">
-                            <label for="type_3">
-                              <span>Мастер-класс</span>
-                            </label>
+                          <div class="ui-group">
+                            <label>Тип мероприятия:</label>
+                            <div class="ui-checkbox">
+                              <input id="type_1" type="checkbox" name="type">
+                              <label for="type_1">
+                                <span>Лекция</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_2" type="checkbox" name="type">
+                              <label for="type_2">
+                                <span>Презентация</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_3" type="checkbox" name="type">
+                              <label for="type_3">
+                                <span>Мастер-класс</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_4" type="checkbox" name="type">
+                              <label for="type_4">
+                                <span>День открытых дверей</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_5" type="checkbox" name="type">
+                              <label for="type_5">
+                                <span>Экскурсия</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_6" type="checkbox" name="type">
+                              <label for="type_6">
+                                <span>Фильм</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_7" type="checkbox" name="type">
+                              <label for="type_7">
+                                <span>Концерт, научное шоу</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_8" type="checkbox" name="type">
+                              <label for="type_8">
+                                <span>Конкурс</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_9" type="checkbox" name="type">
+                              <label for="type_9">
+                                <span>Конференция, научная школа</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_10" type="checkbox" name="type">
+                              <label for="type_10">
+                                <span>Круглый стол</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_11" type="checkbox" name="type">
+                              <label for="type_11">
+                                <span>Олимпиада</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="type_12" type="checkbox" name="type">
+                              <label for="type_12">
+                                <span>Семинар</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="type_4" type="checkbox" name="type">
-                            <label for="type_4">
-                              <span>День открытых дверей</span>
-                            </label>
+                          <div class="ui-group">
+                            <label>Целевая аудитория</label>
+                            <div class="ui-checkbox">
+                              <input id="aud_1" type="checkbox" name="aud">
+                              <label for="aud_1">
+                                <span>Абитуриенты</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="aud_2" type="checkbox" name="aud">
+                              <label for="aud_2">
+                                <span>Будет интересно всем</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="aud_3" type="checkbox" name="aud">
+                              <label for="aud_3">
+                                <span>Взрослые</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="aud_4" type="checkbox" name="aud">
+                              <label for="aud_4">
+                                <span>Специалисты</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="aud_5" type="checkbox" name="aud">
+                              <label for="aud_5">
+                                <span>Студенты</span>
+                              </label>
+                            </div>
+                            <div class="ui-checkbox">
+                              <input id="aud_6" type="checkbox" name="aud">
+                              <label for="aud_6">
+                                <span>Школьники</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="type_5" type="checkbox" name="type">
-                            <label for="type_5">
-                              <span>Экскурсия</span>
-                            </label>
+                          <div class="event-page__sidebar-cta event-page__sidebar-cta--mobile">
+                            <button class="btn btn-filled btn--sm" type="submit">Применить</button>
+                            <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
                           </div>
-                          <div class="ui-checkbox">
-                            <input id="type_6" type="checkbox" name="type">
-                            <label for="type_6">
-                              <span>Фильм</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_7" type="checkbox" name="type">
-                            <label for="type_7">
-                              <span>Концерт, научное шоу</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_8" type="checkbox" name="type">
-                            <label for="type_8">
-                              <span>Конкурс</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_9" type="checkbox" name="type">
-                            <label for="type_9">
-                              <span>Конференция, научная школа</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_10" type="checkbox" name="type">
-                            <label for="type_10">
-                              <span>Круглый стол</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_11" type="checkbox" name="type">
-                            <label for="type_11">
-                              <span>Олимпиада</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="type_12" type="checkbox" name="type">
-                            <label for="type_12">
-                              <span>Семинар</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="ui-group">
-                          <label>Целевая аудитория</label>
-                          <div class="ui-checkbox">
-                            <input id="aud_1" type="checkbox" name="aud">
-                            <label for="aud_1">
-                              <span>Абитуриенты</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="aud_2" type="checkbox" name="aud">
-                            <label for="aud_2">
-                              <span>Будет интересно всем</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="aud_3" type="checkbox" name="aud">
-                            <label for="aud_3">
-                              <span>Взрослые</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="aud_4" type="checkbox" name="aud">
-                            <label for="aud_4">
-                              <span>Специалисты</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="aud_5" type="checkbox" name="aud">
-                            <label for="aud_5">
-                              <span>Студенты</span>
-                            </label>
-                          </div>
-                          <div class="ui-checkbox">
-                            <input id="aud_6" type="checkbox" name="aud">
-                            <label for="aud_6">
-                              <span>Школьники</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="event-page__sidebar-cta">
-                          <button class="btn btn-filled btn--sm" type="submit">Применить</button>
-                          <button class="btn btn-primary btn-primary--white btn--sm" type="button">Очистить</button>
                         </div>
                       </div>
                     </form>

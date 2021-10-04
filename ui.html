@@ -98,7 +98,7 @@
                           </svg>
                         </a>
                       </div>
-                      <a class="header__action" href="#">
+                      <a class="header__action js-open-overlay" href="#" data-id="search">
                         <svg class="ico ico-mono-search">
                           <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
                         </svg>
@@ -266,7 +266,7 @@
             </div>
           </header>
           <!-- Overlay-->
-          <div class="overlay" data-overlay-id="cities">
+          <div class="overlay" data-overlay-id="cities" data-set-height>
             <div class="overlay__bg"></div>
             <div class="overlay__content">
               <div class="container">
@@ -546,6 +546,25 @@
               </div>
             </div>
           </div>
+          <!-- Overlay-->
+          <div class="overlay" data-overlay-id="search">
+            <div class="overlay__bg"></div>
+            <div class="overlay__content">
+              <div class="container">
+                <div class="overlay__wrapper overlay__wrapper--search">
+                  <form class="overlay__search" action="#">
+                    <input type="search" placeholder="Введите поисковый запрос">
+                    <button class="btn btn-primary btn-primary--b-white btn--sm" type="submit">Поиск</button>
+                  </form>
+                  <div class="overlay__close">
+                    <svg class="ico ico-mono-close">
+                      <use xlink:href="img/sprite-mono.svg#ico-mono-close"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- MOBILE NAVI-->
           <div class="mobile-navi">
             <div class="mobile-navi__wrapper">
@@ -731,6 +750,9 @@
                   <svg class="ico ico-mono-checkbox">
                     <use xlink:href="img/sprite-mono.svg#ico-mono-checkbox"></use>
                   </svg>
+                  <svg class="ico ico-mono-filters">
+                    <use xlink:href="img/sprite-mono.svg#ico-mono-filters"></use>
+                  </svg>
                   <svg class="ico ico-mono-arrow-prev">
                     <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-prev"></use>
                   </svg>
@@ -763,8 +785,11 @@
                   </svg>
                 </div>
                 <div class="dev-icons">
-                  <svg class="ico ico-color-example">
-                    <use xlink:href="img/sprite-color.svg#ico-color-example"></use>
+                  <svg class="ico ico-color-auth-fb">
+                    <use xlink:href="img/sprite-color.svg#ico-color-auth-fb"></use>
+                  </svg>
+                  <svg class="ico ico-color-auth-vk">
+                    <use xlink:href="img/sprite-color.svg#ico-color-auth-vk"></use>
                   </svg>
                 </div>
               </section>
